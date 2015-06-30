@@ -3,7 +3,7 @@ from distutils.core import setup
 setup(name='powerline-mem-segment',
       version='1.0',
       description='Memory segment for Powerline',
-      author='Mads Kalør',
+      author='Mads Kaloer',
       author_email='mads@kaloer.com',
       packages=['powerlinemem'],
       url='https://github.com/mKaloer/powerline_mem_segment',
