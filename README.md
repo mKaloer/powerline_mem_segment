@@ -4,7 +4,7 @@ Segment for [Powerline](https://github.com/powerline/powerline) showing the curr
 ![](images/img2.png?raw=true)
 
 ## Installation
-    pip install .
+    pip install powerline-mem-segment
 
 ## Usage
 To apply the segment, add the following to the Powerline configuration file:
