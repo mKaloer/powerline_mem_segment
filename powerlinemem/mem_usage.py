@@ -16,14 +16,20 @@ def _sizeof_fmt(num, suffix='B'):
             return "%3.1f%s%s" % (num, unit, suffix)
         num /= 1024.0
     return "%.1f%s%s" % (num, 'Yi', suffix)
+    
+def _get_mem_used(mem_data, mem_type):
+    mem_used = getattr(mem_data, mem_type, None)
+    if mem_used is None:
+        mem_used = mem_data.used
+    return mem_used
 
-
-def mem_usage(pl, format="%s/%s"):
+def mem_usage(pl, format="%s/%s", mem_type='used'):
     mem_data = psutil.virtual_memory()
-    mem_percentage = (float(mem_data.used) / mem_data.total) * 100
+    mem_used = _get_mem_used(mem_data, mem_type)
+    mem_percentage = (float(mem_used) / mem_data.total) * 100
     return [
         {
-            'contents': format % (_sizeof_fmt(mem_data.used), _sizeof_fmt(mem_data.total)),
+            'contents': format % (_sizeof_fmt(mem_used), _sizeof_fmt(mem_data.total)),
             'gradient_level': mem_percentage,
             'highlight_groups': ['mem_usage_gradient', 'mem_usage']
         }
@@ -31,7 +37,8 @@ def mem_usage(pl, format="%s/%s"):
 
 def mem_usage_percent(pl, format="%d%%"):
     mem_data = psutil.virtual_memory()
-    mem_percentage = (float(mem_data.used) / mem_data.total) * 100
+    mem_used = _get_mem_used(mem_data, mem_type)
+    mem_percentage = (float(mem_used) / mem_data.total) * 100
     return [
         {
             'contents': format % (mem_percentage, ),
