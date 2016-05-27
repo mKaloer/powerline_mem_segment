@@ -28,6 +28,17 @@ The format can be configured using the ```format``` argument:
 		    "format": "Mem: %d%%"
 		}
     }
+    
+The type of memory to use can be configured by passing the desired [psutil attribute name](https://pythonhosted.org/psutil/#psutil.virtual_memory) as the ``mem_type`` argument (the default is "`used`"):
+
+
+    {
+        "function": "powerlinemem.mem_usage.mem_usage",
+        "priority": 50,
+		"args": {
+		    "mem_type": "active"
+		}
+    }
 
 One or two highlight groups named ```mem_usage``` and ```mem_usage_gradient``` have to be defined in the colorscheme json file. For example:
 
