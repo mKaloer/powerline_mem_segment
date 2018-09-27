@@ -31,7 +31,8 @@ def mem_usage(pl, format="%s/%s", mem_type='used'):
         {
             'contents': format % (_sizeof_fmt(mem_used), _sizeof_fmt(mem_data.total)),
             'gradient_level': mem_percentage,
-            'highlight_groups': ['mem_usage_gradient', 'mem_usage']
+            'highlight_groups': ['mem_usage_gradient', 'mem_usage'],
+            'divider_highlight_group': 'background:divider'
         }
     ]
 
@@ -43,6 +44,7 @@ def mem_usage_percent(pl, format="%d%%", mem_type='used'):
         {
             'contents': format % (mem_percentage, ),
             'gradient_level': mem_percentage,
-            'highlight_groups': ['mem_usage_gradient', 'mem_usage']
+            'highlight_groups': ['mem_usage_gradient', 'mem_usage'],
+            'divider_highlight_group': 'background:divider'
         }
     ]
