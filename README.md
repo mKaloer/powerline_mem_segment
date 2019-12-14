@@ -42,8 +42,8 @@ The type of memory to use can be configured by passing the desired [psutil attri
 
 One or two highlight groups named ```mem_usage``` and ```mem_usage_gradient``` have to be defined in the colorscheme json file. For example:
 
-    "mem_usage":                 { "fg": "gray8", "bg": "gray0", "attr": [] },
-	"mem_usage_gradient":        { "fg": "green_yellow_orange_red", "bg": "gray0", "attr": [] }
+    "mem_usage":                 { "fg": "gray8", "bg": "gray0", "attrs": [] },
+    "mem_usage_gradient":        { "fg": "green_yellow_orange_red", "bg": "gray0", "attrs": [] }
 
 ## Dependencies
 The only dependency is [psutil](https://github.com/giampaolo/psutil).
