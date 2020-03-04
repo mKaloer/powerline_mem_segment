@@ -40,6 +40,17 @@ The type of memory to use can be configured by passing the desired [psutil attri
 		}
     }
 
+The short form of size units (i.e. "`K`", "`M`", "`G`"...) can be used by passing the `short` argument (the default is `False`):
+
+
+    {
+        "function": "powerlinemem.mem_usage.mem_usage",
+		"args": {
+		    "short": true
+		}
+    }
+
+
 One or two highlight groups named ```mem_usage``` and ```mem_usage_gradient``` have to be defined in the colorscheme json file. For example:
 
     "mem_usage":                 { "fg": "gray8", "bg": "gray0", "attrs": [] },
