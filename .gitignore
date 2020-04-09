@@ -55,3 +55,6 @@ docs/_build/
 
 # PyBuilder
 target/
+
+# Intellij IDE stuff
+.idea/
