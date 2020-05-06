@@ -1,7 +1,7 @@
 from distutils.core import setup
 
 setup(name='powerline-mem-segment',
-      version='2.1',
+      version='2.3',
       description='Memory segment for Powerline',
       author='Mads Kaloer',
       author_email='mads@kaloer.com',
