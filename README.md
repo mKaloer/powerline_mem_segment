@@ -10,30 +10,23 @@ Segment for [Powerline](https://github.com/powerline/powerline) showing the curr
 To apply the segment, add the following to the Powerline configuration file:
 
     {
-        "function": "powerlinemem.mem_usage.mem_usage"
+        "function": "powerlinemem.mem_usage"
     }
 
-For a percentage status, use the ```mem_usage_percent``` callable:
+The percentage status can be configured using the ```format_type``` argument:
 
     {
-        "function": "powerlinemem.mem_usage.mem_usage_percent"
-    }
-
-The format can be configured using the ```format``` argument:
-
-    {
-        "function": "powerlinemem.mem_usage.mem_usage_percent",
-        "priority": 50,
-		"args": {
-		    "format": "Mem: %d%%"
-		}
+        "function": "powerlinemem.mem_usage",
+        "args": {
+            "format_type": "percentage"
+        }
     }
     
 The type of memory to use can be configured by passing the desired [psutil attribute name](https://pythonhosted.org/psutil/#psutil.virtual_memory) as the ``mem_type`` argument (the default is "`used`"):
 
 
     {
-        "function": "powerlinemem.mem_usage.mem_usage",
+        "function": "powerlinemem.mem_usage",
         "priority": 50,
 		"args": {
 		    "mem_type": "active"
@@ -44,7 +37,7 @@ The short form of size units (i.e. "`K`", "`M`", "`G`"...) can be used by passin
 
 
     {
-        "function": "powerlinemem.mem_usage.mem_usage",
+        "function": "powerlinemem.mem_usage",
 		"args": {
 		    "short": true
 		}
