@@ -16,9 +16,9 @@ def _sizeof_fmt(num, short=False, suffix='B'):
         suffix = ''
     for unit in [('', ''), ('Ki', 'K'), ('Mi', 'M'), ('Gi', 'G'), ('Ti', 'T'), ('Pi', 'P'), ('Ei', 'E'), ('Zi', 'Z')]:
         if abs(num) < 1024.0:
-            return "%3.1f%s%s" if num else "%d%s%s" % (num, unit[int(short)], suffix)
+            return ("%3.1f%s%s" if num else "%d%s%s") % (num, unit[int(short)], suffix)
         num /= 1024.0
-    return "%.1f%s%s" if num else "%d%s%s" % (num, ('Yi', 'Y')[int(short)], suffix)
+    return ("%.1f%s%s" if num else "%d%s%s") % (num, ('Yi', 'Y')[int(short)], suffix)
 
 def _get_mem_used(mem_data, mem_type):
     mem_used = getattr(mem_data, mem_type, None)
