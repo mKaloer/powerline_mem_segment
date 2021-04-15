@@ -68,3 +68,16 @@ def mem_swap(pl, format="%s/%s", mem_type='used', short=False):
             'divider_highlight_group': 'background:divider'
         }
     ]
+
+def mem_swap_percentage(pl, format="%d%%", mem_type='used'):
+    mem_data = psutil.swap_memory()
+    mem_used = _get_mem_used(mem_data, mem_type)
+    mem_percentage = ((float(mem_used) / mem_data.total) * 100) if mem_data.total else 0
+    return [
+        {
+            'contents': format % (mem_percentage, ),
+            'gradient_level': mem_percentage,
+            'highlight_groups': ['mem_usage_gradient', 'mem_usage'],
+            'divider_highlight_group': 'background:divider'
+        }
+    ]
