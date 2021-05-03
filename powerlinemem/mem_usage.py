@@ -69,7 +69,7 @@ def mem_swap(pl, format="%s/%s", mem_type='used', short=False):
         }
     ]
 
-def mem_swap_percentage(pl, format="%d%%", mem_type='used'):
+def mem_swap_percent(pl, format="%d%%", mem_type='used'):
     mem_data = psutil.swap_memory()
     mem_used = _get_mem_used(mem_data, mem_type)
     mem_percentage = ((float(mem_used) / mem_data.total) * 100) if mem_data.total else 0

@@ -50,7 +50,7 @@ The short form of size units (i.e. "`K`", "`M`", "`G`"...) can be used by passin
 		}
     }
 
-For swap memory usage, use the ```mem_swap``` callable which accepts the same arguments as ```mem_usage```:
+For swap memory usage, use the ```mem_swap``` or ```mem_swap_percent``` callable which accepts the same arguments as ```mem_usage``` and ```mem_usage_percent```, respectively:
 
     {
         "function": "powerlinemem.mem_usage.mem_swap"
